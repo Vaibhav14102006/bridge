@@ -1,0 +1,609 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Luxurious romantic theme - Pink, Purple, Gold */
+  --background: #fdf8f9;
+  --foreground: #2d1b2e;
+  --card: #ffffff;
+  --card-foreground: #2d1b2e;
+  --popover: #ffffff;
+  --popover-foreground: #2d1b2e;
+  --primary: #e91e63;
+  --primary-foreground: #ffffff;
+  --secondary: #fce4ec;
+  --secondary-foreground: #2d1b2e;
+  --muted: #f8e8ee;
+  --muted-foreground: #6d5d6e;
+  --accent: #9c27b0;
+  --accent-foreground: #ffffff;
+  --destructive: #c62828;
+  --destructive-foreground: #ffffff;
+  --border: #f3d4e0;
+  --input: #ffffff;
+  --ring: #e91e63;
+  --chat-bg: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
+  --own-message-bg: linear-gradient(135deg, #f48fb1 0%, #ec407a 100%);
+  --other-message-bg: #ffffff;
+  --header-bg: linear-gradient(135deg, #880e4f 0%, #4a148c 100%);
+  --gold: #ffd700;
+  --rose: #ff1744;
+  --burgundy: #880e4f;
+  --navy: #1a237e;
+  --lavender: #e1bee7;
+  --radius: 0.75rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #2d1b2e;
+  --sidebar-primary: #9c27b0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fce4ec;
+  --sidebar-accent-foreground: #2d1b2e;
+  --sidebar-border: #f3d4e0;
+  --sidebar-ring: #e91e63;
+}
+
+.dark {
+  /* Luxurious dark theme - Deep burgundy, navy, purple with gold accents */
+  --background: #1a0e1f;
+  --foreground: #f5e6f0;
+  --card: #2d1b2e;
+  --card-foreground: #f5e6f0;
+  --popover: #2d1b2e;
+  --popover-foreground: #f5e6f0;
+  --primary: #ff4081;
+  --primary-foreground: #ffffff;
+  --secondary: #4a148c;
+  --secondary-foreground: #f5e6f0;
+  --muted: #3d2945;
+  --muted-foreground: #b39dbb;
+  --accent: #ffd700;
+  --accent-foreground: #1a0e1f;
+  --destructive: #c62828;
+  --destructive-foreground: #ffffff;
+  --border: #4a2f52;
+  --input: #2d1b2e;
+  --ring: #ff4081;
+  --chat-bg: linear-gradient(135deg, #1a0e1f 0%, #2d1b2e 50%, #4a148c 100%);
+  --own-message-bg: linear-gradient(135deg, #880e4f 0%, #c2185b 100%);
+  --other-message-bg: #3d2945;
+  --header-bg: linear-gradient(135deg, #4a148c 0%, #880e4f 100%);
+  --gold: #ffd700;
+  --rose: #ff4081;
+  --burgundy: #880e4f;
+  --navy: #1a237e;
+  --lavender: #9c27b0;
+  --sidebar: #2d1b2e;
+  --sidebar-foreground: #f5e6f0;
+  --sidebar-primary: #ff4081;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #3d2945;
+  --sidebar-accent-foreground: #f5e6f0;
+  --sidebar-border: #4a2f52;
+  --sidebar-ring: #ffd700;
+}
+
+@theme inline {
+  --color-primary: #e8b4d0;
+  --color-primary-light: #f5d8e8;
+  --color-accent: #d98ba8;
+  --color-accent-dark: #c16a88;
+  --color-rose-light: #fce4ec;
+  --color-cream: #faf8f3;
+  --color-warm-beige: #f5f0e6;
+  --color-muted: #d7ccc8;
+  --color-muted-dark: #bcaaa4;
+  --radius: 0.5rem;
+  --font-serif: 'Cormorant Garamond', 'Cormorant Garamond Fallback';
+  --font-sans: 'Dancing Script', 'Dancing Script Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-mono: 'Dancing Script', 'Dancing Script Fallback';}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+* {
+  @apply transition-colors duration-300;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-foreground font-sans;
+  min-height: 100vh;
+}
+
+/* WhatsApp-style glass panel */
+.glass-panel {
+  @apply backdrop-blur-sm bg-card rounded-lg border border-border shadow-sm;
+}
+
+/* Modern gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent font-semibold;
+}
+
+/* Luxurious chat background with subtle pattern */
+.chat-background {
+  background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #fff9e6 100%);
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(156, 39, 176, 0.05) 0%, transparent 50%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(233, 30, 99, 0.02) 10px,
+      rgba(233, 30, 99, 0.02) 20px
+    );
+}
+
+.dark .chat-background {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #374151 100%);
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
+}
+
+.elegant-shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.soft-glow {
+  box-shadow: 0 0 10px rgba(37, 211, 102, 0.15);
+}
+
+/* WhatsApp-style message tail */
+.message-tail-right {
+  position: relative;
+}
+
+.message-tail-right::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 8px solid var(--own-message-bg);
+  border-bottom: 8px solid transparent;
+}
+
+.dark .message-tail-right::after {
+  border-left-color: var(--own-message-bg);
+}
+
+.message-tail-left {
+  position: relative;
+}
+
+.message-tail-left::after {
+  content: '';
+  position: absolute;
+  left: -8px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-right: 8px solid var(--other-message-bg);
+  border-bottom: 8px solid transparent;
+}
+
+.dark .message-tail-left::after {
+  border-right-color: var(--other-message-bg);
+}
+
+.button-hover {
+  @apply hover:scale-105 active:scale-95;
+}
+
+/* Enhanced message animation */
+.message-enter {
+  animation: slideInMessage 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* New animations for polish */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-gentle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.typing-dot {
+  animation: pulse-gentle 1.4s infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Utility animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Improved focus states for accessibility */
+input:focus,
+textarea:focus,
+button:focus {
+  @apply outline-none ring-2 ring-primary/30;
+}
+
+/* Loading skeleton animation */
+.skeleton-loading {
+  background: linear-gradient(
+    90deg,
+    rgba(232, 180, 208, 0.1) 0%,
+    rgba(232, 180, 208, 0.2) 50%,
+    rgba(232, 180, 208, 0.1) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Smooth link hover effects */
+a {
+  @apply transition-all duration-200;
+}
+
+a:hover {
+  @apply text-primary;
+}
+
+/* Better scrollbar styling - WhatsApp style */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile-specific scrollbar */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+}
+
+/* Smooth focus states */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Mobile-first responsive improvements */
+@media (max-width: 640px) {
+  /* Reduce spacing on mobile */
+  .chat-background {
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+  
+  /* Better touch targets */
+  button, .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve text readability on mobile */
+  body {
+    font-size: 16px; /* Prevents zoom on iOS */
+    line-height: 1.5;
+  }
+  
+  /* Better message spacing on mobile */
+  .message-bubble {
+    margin-bottom: 8px;
+  }
+  
+  /* Responsive padding */
+  .mobile-padding {
+    padding: 0.5rem;
+  }
+  
+  /* Hide non-essential elements on very small screens */
+  .desktop-only {
+    display: none;
+  }
+
+  /* Mobile-specific utilities */
+  .mobile-safe-area {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Better form inputs on mobile */
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Mobile-friendly buttons */
+  .btn-mobile {
+    padding: 12px 16px;
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  /* Compact headers */
+  .mobile-header {
+    height: 56px;
+  }
+
+  /* Full-width containers on mobile */
+  .mobile-full {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small mobile adjustments */
+  body {
+    font-size: 14px;
+  }
+  
+  /* Compact message bubbles */
+  .message-bubble {
+    max-width: 95%;
+    padding: 8px 12px;
+  }
+  
+  /* Smaller button sizes */
+  .btn-sm {
+    padding: 6px 12px;
+    font-size: 14px;
+    min-height: 40px;
+  }
+
+  /* Very compact spacing */
+  .xs-spacing {
+    gap: 0.25rem;
+  }
+
+  /* Hide decorative elements on very small screens */
+  .xs-hidden {
+    display: none;
+  }
+}
+
+/* Extra small breakpoint (below 475px) */
+@media (max-width: 475px) {
+  .xs\:block {
+    display: block;
+  }
+  
+  .xs\:hidden {
+    display: none;
+  }
+  
+  .xs\:inline {
+    display: inline;
+  }
+  
+  .xs\:max-w-\[85\%\] {
+    max-width: 85%;
+  }
+  
+  .xs\:p-1 {
+    padding: 0.25rem;
+  }
+  
+  .xs\:text-xs {
+    font-size: 0.75rem;
+  }
+}
+
+/* Responsive gradient animation */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Mobile-optimized animations */
+@media (prefers-reduced-motion: reduce) {
+  .typing-dot,
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-scale-in,
+  .skeleton-loading {
+    animation: none;
+  }
+}
+
+/* Touch-friendly hover states */
+@media (hover: hover) and (pointer: fine) {
+  .button-hover:hover {
+    transform: scale(1.05);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .button-hover:active {
+    transform: scale(0.95);
+  }
+  
+  /* Remove hover states on touch devices */
+  .hover\:bg-muted:hover {
+    background-color: inherit;
+  }
+}
+
+/* Landscape mobile optimizations */
+@media (max-width: 768px) and (orientation: landscape) {
+  .chat-container {
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .navbar {
+    height: 50px;
+  }
+  
+  .chat-input-container {
+    padding: 8px;
+  }
+
+  /* Adjust message area in landscape */
+  .landscape-compact {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+}
+
+/* iOS safe area support */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Prevent text selection on UI elements */
+.select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Improve touch responsiveness */
+.touch-manipulation {
+  touch-action: manipulation;
+}
